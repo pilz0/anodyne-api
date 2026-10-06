@@ -9,6 +9,9 @@ Anodyne's API backend.
 ### without nix
 ```shell
 go build .
-ln -s /anodyne-frontend/db.sqlite ./
-tmux new-session -d -s anodyne-api './anodyne-api'
+tmux new-session -d -s anodyne-api './anodyne-api -db /anodyne-frontend/db.sqlite'
 ```
+
+### options
+- `-db <path>`: path to the SQLite database (default `db.sqlite`)
+- `-port <n>`: port to listen on (default `8080`)
