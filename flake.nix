@@ -24,11 +24,6 @@
         };
       in
       {
-        hydraJobs = {
-          inherit (self)
-            packages
-            ;
-        };
         formatter = pkgs.nixfmt-tree;
         packages = {
           default = anodyne-api;
@@ -42,5 +37,10 @@
           ];
         };
       }
-    );
+    )
+    // {
+      hydraJobs = {
+        inherit (self) packages;
+      };
+    };
 }
