@@ -2,6 +2,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    systems.url = "github:nix-systems/triplet";
+    flake-utils.inputs.systems.follows = "systems";
   };
   outputs =
     {
@@ -22,6 +24,11 @@
         };
       in
       {
+        hydraJobs = {
+          inherit (self)
+            packages
+            ;
+        };
         formatter = pkgs.nixfmt-tree;
         packages = {
           default = anodyne-api;
