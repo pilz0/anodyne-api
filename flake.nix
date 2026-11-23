@@ -20,7 +20,7 @@
           pname = "anodyne-api";
           version = "0.1.0";
           src = self.outPath;
-          vendorHash = "sha256-wpv6Xs4d3l7SJq9mXsFTjnHzOF8oWANAl5Vab5gyVmE=";
+          vendorHash = "sha256-x5AuC0c3vHKCJ6raDllxHVUWVrCG57EUOjuWvqWZbbs=";
         };
       in
       {
